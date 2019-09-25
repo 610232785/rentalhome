@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @Time 21:30
  */
 @Controller
-@RequestMapping(value = "/wx")
-public class WeiXinController {
+@RequestMapping(value = "/web")
+public class WebController {
 
     @RequestMapping(value = "/data",method = RequestMethod.POST,produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
