@@ -47,6 +47,7 @@ public class WebController {
      */
     @RequestMapping(value = "/toHome",method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
     public Object toHome(){
+
         return "home";
     }
 
