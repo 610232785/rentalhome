@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 /**
  * describe:
@@ -28,8 +29,11 @@ public class WebController {
      * @return
      */
     @RequestMapping(value = "/toIndex",method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
-    public Object toIndex(){
-        return "index";
+    public ModelAndView toIndex(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject("name", "123123");
+        modelAndView.setViewName("index");
+        return modelAndView;
     }
 
     /**

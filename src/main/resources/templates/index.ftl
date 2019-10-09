@@ -25,7 +25,7 @@
         <div class="kr-article-meta">
             <div id="kr-article-author" class="kr-article-author">{{author}}</div>
             <div class="kr-article-text">发表于</div>
-            <div id="kr-article-time" class="kr-article-time">{{time}}</div>
+            <div id="kr-article-time" class="kr-article-time">${name}</div>
         </div>
         <!--文章详细内容-->
         <div id="kr-article-article" class="kr-article-article" v-html="content"></div>
