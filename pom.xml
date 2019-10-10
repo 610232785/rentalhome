@@ -12,7 +12,7 @@
 	<artifactId>rentalhome</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>rentalhome</name>
-	<description>Demo project for Spring Boot</description>
+	<description>my home</description>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -51,11 +51,27 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>tk.mybatis</groupId>
+			<artifactId>mapper-spring-boot-starter</artifactId>
+			<version>2.1.5</version>
+		</dependency>
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20140107</version>
+		</dependency>
 
 		<!-- hot swapping, disable cache for template, enable live reload -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
+			<optional>true</optional>
+		</dependency>
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
 	</dependencies>

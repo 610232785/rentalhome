@@ -1,11 +1,19 @@
 package com.platform.rentalhome.controller;
 
+import com.platform.rentalhome.base.BaseController;
+import com.platform.rentalhome.bean.TbHome;
+import com.platform.rentalhome.service.HomeService;
+import org.mybatis.logging.Logger;
+import org.mybatis.logging.LoggerFactory;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+
+import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * describe:
@@ -16,12 +24,18 @@ import org.springframework.web.servlet.ModelAndView;
  */
 @Controller
 @RequestMapping(value = "/web")
-public class WebController {
+public class WebController extends BaseController {
+
+    @Resource
+    private HomeService homeService;
+
+    Logger logger = LoggerFactory.getLogger(WebController.class);
 
     @RequestMapping(value = "/data",method = RequestMethod.POST,produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public Object data(){
-        return "1";
+        List<TbHome> homes = homeService.selectData();
+        return homes;
     }
 
     /**
@@ -32,7 +46,7 @@ public class WebController {
     public ModelAndView toIndex(){
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject("name", "123123");
-        modelAndView.setViewName("index");
+        modelAndView.setViewName("index2");
         return modelAndView;
     }
 
@@ -42,7 +56,7 @@ public class WebController {
      */
     @RequestMapping(value = "/homeList",method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
     public Object homeList(){
-        return "home_list";
+        return "home_list2";
     }
 
     /**
@@ -62,5 +76,14 @@ public class WebController {
     @RequestMapping(value = "/toFeedback",method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
     public Object toFeedback(){
         return "feedback";
+    }
+
+    /**
+     * 联系我们
+     * @return
+     */
+    @RequestMapping(value = "/toContact",method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
+    public Object toContact(){
+        return "contact";
     }
 }
