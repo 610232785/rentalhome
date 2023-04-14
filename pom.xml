@@ -59,7 +59,7 @@
 		<dependency>
 			<groupId>org.json</groupId>
 			<artifactId>json</artifactId>
-			<version>20140107</version>
+			<version>20230227</version>
 		</dependency>
 
 		<!-- hot swapping, disable cache for template, enable live reload -->
